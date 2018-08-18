@@ -1,0 +1,47 @@
+@function color($name: 'primary', $variant: $up-color-key, $opacity: 'opaque') {
+  $color: null;
+
+  // Get the color spectrum
+  $color-spectrum: map-get($up-colors, $name);
+
+  // Get the color variant
+  @if $color-spectrum {
+    $color: map-get($color-spectrum, $variant);
+  }
+
+  // Get the alpha setting
+  $alpha: if(
+    type-of($opacity) == 'number',
+    $opacity,
+    map-get($up-opacity, $opacity)
+  );
+
+  // Set the alpha of the color
+  @if $alpha {
+    $color: rgba($color, $alpha);
+  }
+
+  @return $color;
+}
+
+@function shadow($depth: 'light') {
+  $shadow: map-get($up-shadow, $depth);
+  @return $shadow;
+}
+
+@function fontWeight($weight: 'normal') {
+  $weightMap: map-get(
+    $map: $up-typography,
+    $key: 'weight'
+  );
+  $fontWeight: map-get(
+    $map: $weightMap,
+    $key: $weight
+  );
+
+  @return $fontWeight;
+}
+
+@function spacing($amount: 'normal') {
+  @return map-get($map: $up-spacings, $key: $amount);
+}

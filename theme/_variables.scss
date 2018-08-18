@@ -1,0 +1,112 @@
+$up-color-key: 'base' !default;
+
+$up-colors: (
+  'default': (
+    'base': #5d5d5d,
+    'light': #d1d1d1,
+    'dark': #181818,
+    'foreground': #ffffff
+  ),
+  'primary': (
+    'base': #45ad70,
+    'light': #cce8d8,
+    'dark': #2c6f48,
+    'foreground': #eef7f2
+  ),
+  'accent': (
+    'base': #ffb017,
+    'light': #ffe2aa,
+    'dark': #ba8111,
+    'foreground': #fff7e9
+  ),
+  'secondary': (
+    'base': #475ebc,
+    'light': #ccd3ec,
+    'dark': #2e3c78,
+    'foreground': #eef0f8
+  ),
+  'body': (
+    'base': #1e2225,
+    'dim': #cfdae6,
+    'light': #8595a6,
+    'white': #ffffff
+  ),
+  'success': (
+    'base': #45ad70,
+    'foreground': #eef7f2,
+    'background': #45ad70
+  ),
+  'info': (
+    'base': #00a9e8,
+    'foreground': #eef7fc,
+    'background': #00a9e8
+  ),
+  'warning': (
+    'base': #ff9a17,
+    'foreground': #fff5e9,
+    'background': #ff9a17
+  ),
+  'danger': (
+    'base': #ff5164,
+    'foreground': #ffeff0,
+    'background': #ff5164
+  )
+);
+
+$up-opacity: (
+  'low': 0.5,
+  'high': 0.9,
+  'opaque': 1
+);
+
+$up-shadow: (
+  'light': 0px 1px 2px #ccc,
+  'heavy': 0px 2px 3px #ccc,
+  'deep': 0px 3px 5px #ccc,
+  'raise': 0px 2px 5px #aaa
+);
+
+$up-typography: (
+  'size': (
+    't1': (
+      2.5em,
+      2.5em
+    ),
+    't2': (
+      2em,
+      2em
+    ),
+    't3': (
+      1.5em,
+      1.5em
+    ),
+    't4': (
+      1em,
+      1em
+    ),
+    'default': (
+      1em,
+      1em
+    ),
+    't5': (
+      0.8em,
+      1em
+    ),
+    't6': (
+      0.5em,
+      0.8em
+    )
+  ),
+  'weight': (
+    'thin': 300,
+    'normal': 400,
+    'bold': 700,
+    'thick': 900
+  )
+);
+
+$up-spacings: (
+  'normal': 3px,
+  'compact': 5px,
+  'easy': 10px
+);

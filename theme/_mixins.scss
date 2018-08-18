@@ -1,0 +1,14 @@
+@mixin font($size: 'body', $weight: 'normal') {
+  $fontSizes: map-get(
+    $map: $up-typography,
+    $key: 'size'
+  );
+  $size: map-get(
+    $map: $fontSizes,
+    $key: $size
+  );
+
+  font-size: nth($size, 1);
+  line-height: nth($size, 2);
+  font-weight: fontWeight($weight);
+}

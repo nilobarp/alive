@@ -1,0 +1,122 @@
+@import '../../../theme/up';
+
+$default-bg: color('default');
+$default-fg: color('default', 'foreground');
+$primary-bg: color('primary');
+$primary-fg: color('primary', 'foreground');
+$primary-light: color('primary', 'light');
+$secondary-bg: color('secondary');
+$secondary-fg: color('secondary', 'foreground');
+$secondary-light: color('secondary', 'light');
+$accent-bg: color('accent');
+$accent-fg: color('accent', 'foreground');
+$accent-light: color('accent', 'light');
+
+@mixin ghost($color) {
+  background-color: transparent;
+  border: 1px solid + $color;
+  color: $color;
+}
+
+@mixin flat($variant) {
+  background-color: color('body', 'white');
+  border: 1px solid transparent;
+  color: color($variant);
+  &:hover {
+    background-color: color($variant, 'light');
+    -webkit-animation: shadow-drop-2-tb 0.4s
+      cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: shadow-drop-2-tb 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  &:focus {
+    background-color: color($variant, 'light');
+  }
+}
+
+@mixin size($variant) {
+  @if $variant == 'large' {
+    min-width: 64px;
+    height: 48px;
+    line-height: 48px;
+    padding: 8px 16px;
+    @include font('default', 'thin');
+  }
+
+  @if $variant == 'normal' {
+    min-width: 64px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0px 16px;
+    @include font('default', 'thin');
+  }
+
+  @if $variant == 'small' {
+    padding: 3px 10px;
+    @include font('t5', 'thin');
+  }
+}
+
+.button {
+  &__size--large {
+    @include size('large');
+  }
+
+  &__size--default {
+    @include size('normal');
+  }
+
+  &__size--small {
+    @include size('small');
+  }
+
+  text-transform: uppercase;
+  border-radius: 3px;
+  border: 1px solid transparent;
+
+  &__default {
+    background-color: $default-bg;
+    color: $default-fg;
+    &.ghost {
+      @include ghost($default-bg);
+    }
+    &.flat {
+      @include flat('default');
+    }
+  }
+  &__primary {
+    background-color: $primary-bg;
+    color: $primary-fg;
+    &.ghost {
+      @include ghost($primary-bg);
+    }
+    &.flat {
+      @include flat('primary');
+    }
+  }
+  &__secondary {
+    background-color: $secondary-bg;
+    color: $secondary-fg;
+    &.ghost {
+      @include ghost($secondary-bg);
+    }
+    &.flat {
+      @include flat('secondary');
+    }
+  }
+  &__accent {
+    background-color: $accent-bg;
+    color: $accent-fg;
+    &.ghost {
+      @include ghost($accent-bg);
+    }
+    &.flat {
+      @include flat('accent');
+    }
+  }
+  &:focus {
+    outline: $default-bg auto 2px;
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
